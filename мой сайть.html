@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Мужская обувь</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Мужская обувь. Новые модели и заказы через Telegram">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+}
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #000;
+}
+h1 {
+    margin-bottom: 10px;
+}
+p {
+    color: #ccc;
+}
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #0088cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+form {
+    max-width: 400px;
+    margin: auto;
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 12px;
+}
+form input, form button {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+form button {
+    background: #0088cc;
+    color: #fff;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #666;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Мужская обувь</h1>
+    <p>Актуальные модели • Фото • Цены</p>
+    <a class="btn" href="https://t.me/muzhskayobuv" target="_blank">
+        Перейти в Telegram
+    </a>
+</header>
+
+<!-- ПОСТЫ ИЗ TELEGRAM -->
+<section>
+    <h2>🔥 Новые поступления</h2>
+
+    <script async src="https://telegram.org/js/telegram-widget.js?22"
+        data-telegram-post="muzhskayobuv/1"
+        data-width="100%">
+    </script>
+
+    <script async src="https://telegram.org/js/telegram-widget.js?22"
+        data-telegram-post="muzhskayobuv/2"
+        data-width="100%">
+    </script>
+
+    <script async src="https://telegram.org/js/telegram-widget.js?22"
+        data-telegram-post="muzhskayobuv/3"
+        data-width="100%">
+    </script>
+
+</section>
+
+<!-- ОФОРМЛЕНИЕ ЗАКАЗА -->
+<section>
+    <h2>🛍️ Оформить заказ</h2>
+
+    <form id="orderForm">
+        <input type="text" placeholder="Имя" required>
+        <input type="tel" placeholder="Телефон" required>
+        <input type="text" placeholder="Модель / размер" required>
+        <button type="submit">Отправить заказ</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Мужская обувь • Telegram: @Ehsandin9
+</footer>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let values = [];
+    for (let i = 0; i < this.elements.length - 1; i++) {
+        values.push(this.elements[i].value);
+    }
+
+    let text = encodeURIComponent(
+        "Новый заказ:\n" +
+        "Имя: " + values[0] + "\n" +
+        "Телефон: " + values[1] + "\n" +
+        "Модель/размер: " + values[2]
+    );
+
+    window.open("https://t.me/USERNAME?text=" + text, "_blank");
+});
+</script>
+
+</body>
+</html>
